@@ -1,0 +1,44 @@
+### root 
+GET http://localhost:8080/
+
+
+### graphQL query
+POST http://localhost:8080/graphQL
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+query{
+  hello
+  sayWelcome(name:"Arivu")
+  
+  getUserDetails {
+    name
+    confirmPassword
+  }
+  
+  getAllUserList {
+    name
+    age
+  }
+  
+  getDummyMessage
+},
+
+
+### graphQL Mutation
+POST http://localhost:8080/graphQL
+Content-Type: application/json
+X-Request-Type: GraphQL
+
+
+mutation{
+  changeDummyMessage(msg:"I Love you 3000")
+  
+  createUser(name: "Shifli", age:22, address:"Chennai", password : "12121", confirmPassword : "12121") {
+    name
+    age
+    address
+    password
+    confirmPassword
+  }
+}
